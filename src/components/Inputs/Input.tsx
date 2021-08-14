@@ -5,7 +5,7 @@ import * as Yup from "yup";
 export default function Input() {
   return (
     <div>
-      <h1>Formik 연습</h1>
+      <h1>Formik 연습.</h1>
       <Formik
         initialValues={{ email: "", password: "" }}
         validationSchema={Yup.object({
@@ -25,19 +25,19 @@ export default function Input() {
       >
         <Form>
           <div>
-            <label htmlFor="email">email</label>
-            <Field name="email" type="text" />
+            <label htmlFor='email'>email</label>
+            <Field name='email' type='text' />
             <div>
-              <ErrorMessage name="email" />
+              <ErrorMessage name='email' />
             </div>
           </div>
 
-          <label htmlFor="password">password</label>
-          <Field name="password" type="password" />
+          <label htmlFor='password'>password</label>
+          <Field name='password' type='password' />
           <div>
-            <ErrorMessage name="password" />
+            <ErrorMessage name='password' />
           </div>
-          <button type="submit">Submit</button>
+          <button type='submit'>Submit</button>
         </Form>
       </Formik>
     </div>
