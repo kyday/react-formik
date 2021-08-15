@@ -2,12 +2,18 @@ import React from "react";
 import { Formik, Form, Field, ErrorMessage } from "formik";
 import * as Yup from "yup";
 
+type MyformValues = {
+  email: string;
+  password: string;
+};
+
 export default function Input() {
+  const initivalValues: MyformValues = { email: "", password: "" };
   return (
     <div>
       <h1>Formik 연습.</h1>
       <Formik
-        initialValues={{ email: "", password: "" }}
+        initialValues={initivalValues}
         validationSchema={Yup.object({
           email: Yup.string()
             .email("이메일 형식에 맞게 입력해주세요. ")
