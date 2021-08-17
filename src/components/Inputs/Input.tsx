@@ -20,7 +20,11 @@ export default function Input() {
             .required("이메일 또는 비밀번호를 입력해주세요."),
           password: Yup.string()
             .min(4, "최소 4자이상 입력해주세요.")
-            .required("이메일 또는 비밀번호를 입력해주세요."),
+            .required("이메일 또는 비밀번호를 입력해주세요.")
+            .matches(
+              /^(?=.*[A-Za-z])(?=.*\d)(?=.*[@$!%*#?&])[A-Za-z\d@$!%*#?&]{8,}$/,
+              "Must Contain 8 Characters, One Uppercase, One Lowercase, One Number and one special case Character"
+            ),
         })}
         onSubmit={(values, { setSubmitting }) => {
           setTimeout(() => {
